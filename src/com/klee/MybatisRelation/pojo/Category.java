@@ -1,4 +1,4 @@
-package com.klee.MybatisOneToMany.pojo;
+package com.klee.MybatisRelation.pojo;
 
 import lombok.Data;
 

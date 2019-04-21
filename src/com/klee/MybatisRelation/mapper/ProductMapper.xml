@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.klee.MybatisOneToMany.mapper.ProductMapper">
+<mapper namespace="com.klee.MybatisRelation.mapper.ProductMapper">
     <resultMap id="myResultMap" type="product">
         <id property="id" column="pid"/>
         <result property="name" column="pname"/>

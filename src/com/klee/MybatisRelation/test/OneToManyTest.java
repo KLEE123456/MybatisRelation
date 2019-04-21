@@ -1,9 +1,9 @@
-package com.klee.MybatisOneToMany.test;
+package com.klee.MybatisRelation.test;
 
-import com.klee.MybatisOneToMany.mapper.CategoryMapper;
-import com.klee.MybatisOneToMany.mybatisutils.MybatisUtils;
-import com.klee.MybatisOneToMany.pojo.Category;
-import com.klee.MybatisOneToMany.pojo.Product;
+import com.klee.MybatisRelation.mapper.CategoryMapper;
+import com.klee.MybatisRelation.mybatisutils.MybatisUtils;
+import com.klee.MybatisRelation.pojo.Category;
+import com.klee.MybatisRelation.pojo.Product;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
@@ -26,5 +26,6 @@ public class OneToManyTest {
                 System.out.println("\t"+product);
             }
         }
+        MybatisUtils.closeSqlSession(sqlSession);
     }
 }

@@ -1,6 +1,6 @@
-package com.klee.MybatisOneToMany.mapper;
+package com.klee.MybatisRelation.mapper;
 
-import com.klee.MybatisOneToMany.pojo.Product;
+import com.klee.MybatisRelation.pojo.Product;
 
 import java.util.List;
 

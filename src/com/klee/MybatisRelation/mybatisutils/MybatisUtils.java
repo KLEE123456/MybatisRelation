@@ -1,4 +1,4 @@
-package com.klee.MybatisOneToMany.mybatisutils;
+package com.klee.MybatisRelation.mybatisutils;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

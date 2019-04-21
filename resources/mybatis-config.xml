@@ -8,8 +8,8 @@
 
     <!--为类取别名 -->
     <typeAliases>
-        <typeAlias type="com.klee.MybatisOneToMany.pojo.Category" alias="catgory"/>
-        <typeAlias type="com.klee.MybatisOneToMany.pojo.Product" alias="product"/>
+        <typeAlias type="com.klee.MybatisRelation.pojo.Category" alias="catgory"/>
+        <typeAlias type="com.klee.MybatisRelation.pojo.Product" alias="product"/>
     </typeAliases>
 
     <!-- 环境配置 -->
@@ -27,7 +27,7 @@
 
     <!-- 引入映射 -->
     <mappers>
-        <mapper  class="com.klee.MybatisOneToMany.mapper.CategoryMapper"/>
-        <mapper  class="com.klee.MybatisOneToMany.mapper.ProductMapper"/>
+        <mapper  class="com.klee.MybatisRelation.mapper.CategoryMapper"/>
+        <mapper  class="com.klee.MybatisRelation.mapper.ProductMapper"/>
     </mappers>
 </configuration>
