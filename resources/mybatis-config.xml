@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 查找数据库的连接配置 -->
+    <properties resource="sql.properties" />
+
+    <!--为类取别名 -->
+    <typeAliases>
+        <typeAlias type="com.klee.MybatisOneToMany.pojo.Category" alias="catgory"/>
+        <typeAlias type="com.klee.MybatisOneToMany.pojo.Product" alias="product"/>
+    </typeAliases>
+
+    <!-- 环境配置 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}" />
+                <property name="url" value="${url}" />
+                <property name="username" value="${username}" />
+                <property name="password" value="${password}" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 引入映射 -->
+    <mappers>
+        <mapper  class="com.klee.MybatisOneToMany.mapper.CategoryMapper"/>
+        <mapper  class="com.klee.MybatisOneToMany.mapper.ProductMapper"/>
+    </mappers>
+</configuration>

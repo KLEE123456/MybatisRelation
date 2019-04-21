@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klee.MybatisOneToMany.mapper.ProductMapper">
+    <resultMap id="myResultMap" type="product">
+        <id property="id" column="pid"/>
+        <result property="name" column="pname"/>
+        <result property="price" column="price"/>
+        <association property="category" javaType="catgory">
+            <id property="id" column="cid"/>
+            <result property="name" column="cname"/>
+        </association>
+    </resultMap>
+    <select id="listProduct" resultMap="myResultMap">
+      select  c.id 'cid',c.name 'cname',p.id 'pid',p.name 'pname',p.price
+      from  category_ c join  product_ p
+      on c.id=p.cid
+    </select>
+</mapper>
