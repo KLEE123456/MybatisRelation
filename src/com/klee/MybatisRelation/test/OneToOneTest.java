@@ -21,6 +21,9 @@ public class OneToOneTest {
         }
     }
 
+    /**
+     * 查询客户测试方法
+     */
     @Test
     public  void findCustomerTest(){
         SqlSession sqlSession=MybatisUtils.getSqlSession(false);
