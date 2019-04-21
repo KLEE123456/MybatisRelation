@@ -2,19 +2,19 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.klee.MybatisRelation.mapper.CategoryMapper">
-    <resultMap id="myResultMap" type="category">
-        <id property="id"  column="cid"/>
-        <result property="name" column="cname"/>
+<mapper namespace="com.klee.MybatisRelation.mapper.OrdersMapper">
+    <resultMap id="myresultMap" type="orders">
+        <id property="id" column="oid"/>
+        <result property="number" column="number"/>
         <collection property="productList" ofType="product">
             <id property="id" column="pid"/>
             <result property="name" column="pname"/>
             <result property="price" column="price"/>
         </collection>
     </resultMap>
-    <select id="listCategory" resultMap="myResultMap">
-      select  c.id 'cid',c.name 'cname',p.id 'pid',p.name 'pname',p.price
-      from  category_ c join  product_ p
-      on c.id=p.cid
+    <select id="findOrders" resultMap="myresultMap">
+        select o.id oid,o.number ,p.id pid,p.name pname,p.price from orders o
+        join ordersitem oi on o.id=oi.oid
+        join product_ p on oi.pid=p.id
     </select>
 </mapper>

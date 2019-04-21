@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klee.MybatisRelation.mapper.IDCardMapper">
+    <resultMap id="myResultMap" type="idcard">
+        <id property="id" column="id"/>
+        <result property="code" column="code"/>
+        <association property="customer" javaType="customer">
+            <id property="id"  column="cmid"/>
+            <result property="name" column="cmname"/>
+            <result property="age" column="age"/>
+            <result property="sex" column="sex"/>
+        </association>
+    </resultMap>
+    <select id="findIDCard" resultMap="myResultMap">
+        select ic.*,cm.id cmid,cm.name cmname,cm.age,cm.sex  from  id_card ic
+        join customer_ cm on ic.id=cm.` card_id`
+    </select>
+</mapper>

@@ -2,25 +2,20 @@ package com.klee.MybatisRelation.pojo;
 
 import lombok.Data;
 
-
 import java.util.List;
-
-/**
- * 产品类别实体类
- */
 @Data
-public class Category {
+public class Orders {
     private int id;
 
-    private String name;
+    private String number;
 
-    private List<Product>  productList;
+    private List<Product> productList;
 
     @Override
     public String toString() {
-        return "Category{" +
+        return "Orders{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", number='" + number + '\'' +
                 '}';
     }
 }

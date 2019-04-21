@@ -7,7 +7,7 @@
         <id property="id" column="pid"/>
         <result property="name" column="pname"/>
         <result property="price" column="price"/>
-        <association property="category" javaType="catgory">
+        <association property="category" javaType="category">
             <id property="id" column="cid"/>
             <result property="name" column="cname"/>
         </association>

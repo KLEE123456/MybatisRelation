@@ -2,6 +2,8 @@ package com.klee.MybatisRelation.pojo;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * 产品实体类
  */
@@ -14,6 +16,8 @@ public class Product {
     private  float price;
 
     private Category category;
+
+    private List<Orders> ordersList;
     @Override
     public String toString() {
         return "Product{" +
