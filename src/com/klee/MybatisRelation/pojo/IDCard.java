@@ -2,8 +2,12 @@ package com.klee.MybatisRelation.pojo;
 
 import lombok.Data;
 
+/**
+ * IDCard实体类
+ */
 @Data
 public class IDCard {
+
     private  int id;
 
     private  String code;

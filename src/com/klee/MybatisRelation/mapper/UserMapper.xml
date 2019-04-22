@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klee.MybatisRelation.mapper.UserMapper">
+    <resultMap id="MyResultMap" type="user">
+        <result property="cname" column="cname"/>
+        <result property="num" column="num"/>
+        <collection property="ordersList" ofType="orders">
+            <result property="number" column="number"/>
+            <result property="id" column="oid"/>
+        </collection>
+        <collection property="ordersitemList" ofType="ordersitem">
+            <result property="num" column="onum"/>
+        </collection>
+        <collection property="productList" ofType="product">
+            <id property="id" column="pid"/>
+            <result property="name" column="pname"/>
+            <result property="price" column="price"/>
+        </collection>
+    </resultMap>
+    <select id="findUserMessage" resultMap="MyResultMap">
+          select cm.name cname,o.id oid,o.number,oi.num onum,p.id pid,p.name pname,p.price  from  customer_ cm
+            join orders o on  cm.id=o.cmid
+            join ordersitem oi on o.id=oi.oid
+            join product_ p on oi.pid=p.id
+    </select>
+</mapper>

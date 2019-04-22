@@ -11,6 +11,9 @@ import org.junit.Test;
 import java.util.List;
 
 public class OneToOneTest {
+    /**
+     * 查询IDCard测试方法
+     */
     @Test
     public void findIDCardTest(){
         SqlSession sqlSession = MybatisUtils.getSqlSession(false);

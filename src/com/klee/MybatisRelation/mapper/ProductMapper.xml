@@ -11,10 +11,19 @@
             <id property="id" column="cid"/>
             <result property="name" column="cname"/>
         </association>
+        <collection property="ordersList" ofType="orders">
+            <id property="id" column="oid"/>
+            <result property="number" column="number"/>
+        </collection>
     </resultMap>
     <select id="listProduct" resultMap="myResultMap">
       select  c.id 'cid',c.name 'cname',p.id 'pid',p.name 'pname',p.price
       from  category_ c join  product_ p
       on c.id=p.cid
+    </select>
+    <select id="findProduct" resultMap="myResultMap">
+        select o.id oid,o.number ,p.id pid,p.name pname,p.price from orders o
+        join ordersitem oi on o.id=oi.oid
+        join product_ p on oi.pid=p.id
     </select>
 </mapper>

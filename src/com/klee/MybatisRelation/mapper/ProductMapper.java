@@ -7,4 +7,6 @@ import java.util.List;
 public interface ProductMapper {
     //产品查询
     List<Product> listProduct();
+    //产品与订单关系的查询
+    List<Product> findProduct();
 }

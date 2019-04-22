@@ -2,6 +2,9 @@ package com.klee.MybatisRelation.pojo;
 
 import lombok.Data;
 
+/**
+ * 客户实体类
+ */
 @Data
 public class Customer {
     private int id;
