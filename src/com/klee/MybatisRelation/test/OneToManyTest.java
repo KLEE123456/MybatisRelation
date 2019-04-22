@@ -17,6 +17,7 @@ public class OneToManyTest {
     public void listCategoryTest(){
 
         SqlSession sqlSession = MybatisUtils.getSqlSession(false);
+
         CategoryMapper categoryMapper = sqlSession.getMapper(CategoryMapper.class);
         List<Category> categories = categoryMapper.listCategory();
         System.out.println("----------一对多查询------------");
