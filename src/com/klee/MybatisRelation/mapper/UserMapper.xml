@@ -5,7 +5,6 @@
 <mapper namespace="com.klee.MybatisRelation.mapper.UserMapper">
     <resultMap id="MyResultMap" type="user">
         <result property="cname" column="cname"/>
-        <result property="num" column="num"/>
         <collection property="ordersList" ofType="orders">
             <result property="number" column="number"/>
             <result property="id" column="oid"/>

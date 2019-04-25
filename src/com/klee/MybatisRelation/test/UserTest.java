@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class userTest {
+public class UserTest {
     @Test
     public void  findUserMessageTest(){
         SqlSession sqlSession= MybatisUtils.getSqlSession(false);

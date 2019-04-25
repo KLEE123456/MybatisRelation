@@ -9,4 +9,9 @@ public interface ProductMapper {
     List<Product> listProduct();
     //产品与订单关系的查询
     List<Product> findProduct();
+
+    //产品添加的方法
+    int insertProducts(Product product);
+
+
 }

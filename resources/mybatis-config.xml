@@ -6,10 +6,29 @@
     <!-- 查找数据库的连接配置 -->
     <properties resource="sql.properties" />
 
+    <!--延时加载配置-->
+    <!--<settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>-->
+
     <!--为类取别名 -->
     <typeAliases>
         <package name="com.klee.MybatisRelation.pojo" />
     </typeAliases>
+
+    <!--分页配置-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+            <property name="offsetAsPageNum" value="false"/>
+            <property name="rowBoundsWithCount" value="false"/>
+            <property name="pageSizeZero" value="true"/>
+            <property name="reasonable" value="false"/>
+            <property name="supportMethodsArguments" value="false"/>
+            <property name="returnPageInfo" value="none"/>
+        </plugin>
+    </plugins>
 
     <!-- 环境配置 -->
     <environments default="development">

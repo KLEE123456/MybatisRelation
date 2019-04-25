@@ -16,6 +16,15 @@
             <result property="number" column="number"/>
         </collection>
     </resultMap>
+    <resultMap id="map1" type="product">
+        <id property="id" column="pid"/>
+        <result property="name" column="pname"/>
+        <result property="price" column="price"/>
+        <association property="category" javaType="category">
+            <id property="id" column="cid"/>
+            <result property="name" column="cname"/>
+        </association>
+    </resultMap>
     <select id="listProduct" resultMap="myResultMap">
       select  c.id 'cid',c.name 'cname',p.id 'pid',p.name 'pname',p.price
       from  category_ c join  product_ p
@@ -26,4 +35,7 @@
         join ordersitem oi on o.id=oi.oid
         join product_ p on oi.pid=p.id
     </select>
+    <insert id="insertProducts" parameterType="product">
+        insert into product_ values (default ,#{name} ,#{price} ,#{cid})
+    </insert>
 </mapper>

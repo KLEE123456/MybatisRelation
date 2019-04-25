@@ -14,6 +14,8 @@ public class Product {
     private String name;
 
     private  float price;
+    //类别id
+    private int cid;
 
     private Category category;
 

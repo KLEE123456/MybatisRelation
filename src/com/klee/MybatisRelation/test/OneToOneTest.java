@@ -35,6 +35,5 @@ public class OneToOneTest {
         for (Customer customer : customerList) {
             System.out.println(customer+","+customer.getIdCard());
         }
-
     }
 }
